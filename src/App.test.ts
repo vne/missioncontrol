@@ -95,7 +95,7 @@ describe('App', () => {
     it('should return host list of length 1 in Cassandra status message', async () => {
       const res = await chai.request(app).get('/health');
       expect(res.body.message.cassandra.hosts).to.be.an.instanceof(Array);
-      expect(res.body.message.cassandra.hosts).to.have.length(1);
+      expect(res.body.message.cassandra.hosts).to.have.length(1); // of one
     });
 
     it('should have "localhost" as address of the single host in the Cassandra status message', async () => {
